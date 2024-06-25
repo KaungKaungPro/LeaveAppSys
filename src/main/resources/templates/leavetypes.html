@@ -80,14 +80,14 @@
 </head>
 
 <body>
-	<h1>Leave Types</h1>
-	<form th:action="@{/admin/leavetypes}" method="get">
-		<label for="year">Select Year:</label>
-		<select id="year" name="year">
-			<option value="">All</option>
-			<option th:each="y : ${years}" th:value="${y}" th:text="${y}"></option>
-		</select>
-		<button type="submit">Filter</button>
+    <h1>Leave Types</h1>
+	<form th:action="@{/adminEntitlement/leavetypes}" method="get">
+	    <label for="year">Select Year:</label>
+	    <select id="year" name="year">
+	        <option value="">All</option>
+	        <option th:each="y : ${years}" th:value="${y}" th:text="${y}"></option>
+	    </select>
+	    <button type="submit">Filter</button>
 	</form>
 
 	<table>
@@ -108,16 +108,14 @@
 				<td th:text="${leaveEntitlement.leaveType}"></td>
 				<td th:text="${leaveEntitlement.numberOfDays}"></td>
 				<td th:text="${leaveEntitlement.year}"></td>
-				<td>
-					<a th:href="@{/admin/leavetypes/edit/{id}(id=${leaveEntitlement.id})}" class="edit-button">Edit</a>
-					|
-					<a th:href="@{/admin/leavetypes/delete/{id}(id=${leaveEntitlement.id})}"
-						class="delete-button">Delete</a>
-				</td>
-			</tr>
-		</tbody>
-	</table>
-	<a href="/admin/leavetypes/add" class="add-leave-type">Add Entitlement</a>
+                <td>
+                    <a th:href="@{/adminEntitlement/leavetypes/edit/{id}(id=${leaveEntitlement.id})}">Edit</a> |
+                    <a th:href="@{/adminEntitlement/leavetypes/delete/{id}(id=${leaveEntitlement.id})}">Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/adminEntitlement/leavetypes/add" class="add-leave-type">Add Entitlement</a>
 </body>
 
 </html>

@@ -71,9 +71,9 @@
 </head>
 
 <body>
-	<h1>Edit Leave Entitlement</h1>
-	<form th:action="@{/admin/leavetypes/edit/save}" th:object="${leaveEntitlement}" method="post">
-		<input hidden th:field="*{id}" />
+    <h1>Edit Leave Entitlement</h1>
+    <form th:action="@{/adminEntitlement/leavetypes/edit/save}" th:object="${leaveEntitlement}" method="post">
+        <input hidden th:field="*{id}" />
 		<div>
 			<label>Role:</label>
 			<select th:field="*{role}">
@@ -97,12 +97,12 @@
 			<label>Year:</label>
 			<input type="number" th:field="*{year}" th:value="${leaveEntitlement.year}" />
 			<span th:if="${#fields.hasErrors('year')}" th:errors="*{year}" class="inputErrorMessage"></span>
-		</div>
-		<div>
-			<button type="submit">Save</button>
-		</div>
-	</form>
-	<a href="/admin/leavetypes" class="nav-link">Back to Leave Entitlements</a>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+    <a href="/adminEntitlement/leavetypes">Back to Leave Entitlements</a>
 </body>
 
 </html>

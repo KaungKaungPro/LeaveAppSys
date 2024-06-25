@@ -52,6 +52,7 @@
 
 <body th:fragment="body">
 	<div class="container">
+		<button class="btn btn-primary" id="toAllLeaves">View All Leaves</button>
 		<h1>My Leave History</h1>
 		<table>
 			<thead>
@@ -100,6 +101,13 @@
 			</tbody>
 		</table>
 	</div>
+	<script>
+		const element = document.getElementById('toAllLeaves')
+				element.addEventListener('click', (e) => {
+		    		e.preventDefault()
+		    		location.href = 'http://localhost:3000'
+		})
+	</script>
 </body>
 
 </html>

@@ -70,10 +70,10 @@
 	</style>
 </head>
 
-<body th:fragment="body">
-	<h1>Leave Entitlement Form</h1>
-	<form th:action="@{/admin/leavetypes/save}" th:object="${leaveEntitlement}" method="post">
-		<input hidden th:field="*{id}" />
+<body>
+    <h1>Leave Entitlement Form</h1>
+    <form th:action="@{/adminEntitlement/leavetypes/save}" th:object="${leaveEntitlement}" method="post">
+        <input hidden th:field="*{id}" />
 		<div>
 			<label>Role:</label>
 			<select th:field="*{role}">
@@ -98,13 +98,12 @@
 			<select th:field="*{year}">
 				<option th:each="year : ${years}" th:value="${year}" th:text="${year}"></option>
 			</select>
-
-		</div>
-		<div>
-			<button type="submit">Save</button>
-		</div>
-	</form>
-	<a href="/admin/leavetypes" class="nav-link">Back to Leave Entitlements</a>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+    <a href="/adminEntitlement/leavetypes">Back to Leave Entitlements</a>
 </body>
 
 </html>
