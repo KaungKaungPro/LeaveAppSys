@@ -29,7 +29,7 @@ public class LeaveapplicationApplication {
 	CommandLineRunner loadContext(HolidayRepository hr, ClaimRepository cr, LeaveRepository lr, EmployeeRepository er, RoleRepository rr, LeaveEntitlementRepository ler) {
 		return args -> {
 			if(ddlauto.compareTo("create") == 0) {
-				String path = "C:\\Users\\kaung\\leaveappsys\\LeaveAppSys";
+				String path = "C:\\Users\\kaung\\OneDrive\\Documents\\SpringProjects\\leaveappsys\\LeaveAppSys";
 				String employeeCsv = "employee_dummy.csv";
 				ContextIO empIO = new ContextIO(path+ "\\" + employeeCsv);
 				empIO.LoadRoles(rr);
